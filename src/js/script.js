@@ -1,4 +1,6 @@
 import { h, app } from "hyperapp";
+import ColorNumbers from "./components/ColorNumbers";
+import ColorPrev from "./components/ColorPrev";
 //@jsx h
 
 const state = {
@@ -19,48 +21,8 @@ const actions = {
 
 const view = (state, actions) => (
     <div className="colorPalette">
-        <div
-            className="colorPrev"
-            style={{
-                backgroundColor: `rgb(${state.red},${state.green},${
-                    state.blue
-                })`
-            }}
-        />
-        <ul className="colorNumbers">
-            <li>
-                <label>Red:</label>
-                <input
-                    type="number"
-                    value={state.red}
-                    onchange={e => actions.setRed(e.target.value)}
-                />
-            </li>
-            <li>
-                <label>Green:</label>
-                <input
-                    type="number"
-                    value={state.green}
-                    onchange={e => actions.setGreen(e.target.value)}
-                />
-            </li>
-            <li>
-                <label>Blue:</label>
-                <input
-                    type="number"
-                    value={state.blue}
-                    onchange={e => actions.setBlue(e.target.value)}
-                />
-            </li>
-            <li>
-                <label>LaterBlue:</label>
-                <input
-                    type="number"
-                    value={state.blue}
-                    onchange={e => actions.setLaterBlue(e.target.value)}
-                />
-            </li>
-        </ul>
+        <ColorPrev state={state} />
+        <ColorNumbers state={state} actions={actions} />
     </div>
 );
 

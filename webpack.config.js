@@ -49,7 +49,7 @@ const webpackConfig = {
         // 各ファイル形式ごとのビルド設定
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 loader: "babel-loader",
                 exclude: /(node_modules)/,
                 options: {
@@ -112,7 +112,7 @@ const webpackConfig = {
     cache: true,
     // 拡張子省略時のpath解決
     resolve: {
-        extensions: [".js", ".json", "*"]
+        extensions: [".js", ".jsx", ".json", "*"]
     },
 
     plugins: [
