@@ -25,7 +25,7 @@ const view = (state, actions) => (
         />
         <ul className="colorNumbers">
             <li>
-                <label>red:</label>
+                <label>Red:</label>
                 <input
                     type="number"
                     value={state.red}
@@ -33,7 +33,7 @@ const view = (state, actions) => (
                 />
             </li>
             <li>
-                <label>green:</label>
+                <label>Green:</label>
                 <input
                     type="number"
                     value={state.green}
@@ -41,7 +41,7 @@ const view = (state, actions) => (
                 />
             </li>
             <li>
-                <label>blue:</label>
+                <label>Blue:</label>
                 <input
                     type="number"
                     value={state.blue}
