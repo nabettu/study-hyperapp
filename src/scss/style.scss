@@ -16,3 +16,12 @@
 @import "module/wrapper";
 @import "module/palette";
 @import "module/markdown";
+
+b,
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}

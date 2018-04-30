@@ -1,6 +1,11 @@
-#header{
-  height: $header;
-  background-color: #999;
+#header {
+    height: $header;
+    background-color: #999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 #main {
@@ -10,6 +15,81 @@
 
     section {
         width: 50%;
+    }
+}
+
+#editorButtons {
+    background-color: #ccc;
+
+    .editorButtons {
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        border: none;
+        background: #fff;
+        margin: 0 5px 0 0;
+        font-size: 0;
+        position: relative;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.75;
+        }
+
+        &:before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            font-size: 20px;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            color: #586c73;
+            top: 0;
+            left: 0;
+            position: absolute;
+            text-align: center;
+        }
+
+        &--strong {
+            @extend .editorButtons;
+
+            &:before {
+                content: "\f032";
+            }
+        }
+
+        &--italic {
+            @extend .editorButtons;
+
+            &:before {
+                content: "\f033";
+            }
+        }
+
+        &--strikethrough {
+            @extend .editorButtons;
+
+            &:before {
+                content: "\f0cc";
+            }
+        }
+
+        &--link {
+            @extend .editorButtons;
+
+            &:before {
+                content: "\f0c1";
+            }
+        }
+    }
+
+    &.download {
+        margin-left: auto;
+
+        &:before {
+            content: "\f019";
+        }
     }
 }
 

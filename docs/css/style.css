@@ -79,7 +79,12 @@ body {
 
 #header {
   height: 50px;
-  background-color: #999; }
+  background-color: #999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box; }
 
 #main {
   display: flex;
@@ -87,6 +92,46 @@ body {
   width: 100%; }
   #main section {
     width: 50%; }
+
+#editorButtons {
+  background-color: #ccc; }
+  #editorButtons .editorButtons, #editorButtons .editorButtons--strong, #editorButtons .editorButtons--italic, #editorButtons .editorButtons--strikethrough, #editorButtons .editorButtons--link {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    border: none;
+    background: #fff;
+    margin: 0 5px 0 0;
+    font-size: 0;
+    position: relative;
+    cursor: pointer; }
+    #editorButtons .editorButtons:hover, #editorButtons .editorButtons--strong:hover, #editorButtons .editorButtons--italic:hover, #editorButtons .editorButtons--strikethrough:hover, #editorButtons .editorButtons--link:hover {
+      opacity: 0.75; }
+    #editorButtons .editorButtons:before, #editorButtons .editorButtons--strong:before, #editorButtons .editorButtons--italic:before, #editorButtons .editorButtons--strikethrough:before, #editorButtons .editorButtons--link:before {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      font-size: 20px;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      color: #586c73;
+      top: 0;
+      left: 0;
+      position: absolute;
+      text-align: center; }
+    #editorButtons .editorButtons--strong:before {
+      content: "\F032"; }
+    #editorButtons .editorButtons--italic:before {
+      content: "\F033"; }
+    #editorButtons .editorButtons--strikethrough:before {
+      content: "\F0CC"; }
+    #editorButtons .editorButtons--link:before {
+      content: "\F0C1"; }
+  #editorButtons.download {
+    margin-left: auto; }
+    #editorButtons.download:before {
+      content: "\F019"; }
 
 #editor {
   width: 100%;
@@ -536,7 +581,15 @@ SOFTWARE.
     text-align: left; }
   #preview[data-css="air"] p {
     color: #777; }
-  @media print {
+
+b,
+strong {
+  font-weight: bold; }
+
+em {
+  font-style: italic; }
+
+@media print {
     #preview[data-css="air"] *,
     #preview[data-css="air"] *:before,
     #preview[data-css="air"] *:after {
@@ -573,9 +626,11 @@ SOFTWARE.
     #preview[data-css="air"] h2,
     #preview[data-css="air"] h3 {
       page-break-after: avoid; } }
-  @media screen and (min-width: 32rem) and (max-width: 48rem) {
+
+@media screen and (min-width: 32rem) and (max-width: 48rem) {
     #preview[data-css="air"] html {
       font-size: 15px; } }
-  @media screen and (min-width: 48rem) {
+
+@media screen and (min-width: 48rem) {
     #preview[data-css="air"] html {
       font-size: 16px; } }
