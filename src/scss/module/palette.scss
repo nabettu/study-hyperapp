@@ -1,0 +1,32 @@
+.colorPalette {
+    display: flex;
+    width: 400px;
+    margin: 120px auto;
+}
+
+.colorPrev {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.colorNumbers {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    li {
+        display: flex;
+    }
+
+    label {
+        width: 80px;
+        margin-left: 20px;
+    }
+
+    input {
+        width: 100px;
+    }
+}
