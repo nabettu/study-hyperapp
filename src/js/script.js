@@ -10,7 +10,11 @@ const state = {
 const actions = {
     setRed: value => state => ({ red: value }),
     setGreen: value => state => ({ green: value }),
-    setBlue: value => state => ({ blue: value })
+    setBlue: value => state => ({ blue: value }),
+    setLaterBlue: value => async (state, actions) => {
+        await new Promise(done => setTimeout(done, 1000));
+        actions.setBlue(value);
+    }
 };
 
 const view = (state, actions) => (
@@ -46,6 +50,14 @@ const view = (state, actions) => (
                     type="number"
                     value={state.blue}
                     onchange={e => actions.setBlue(e.target.value)}
+                />
+            </li>
+            <li>
+                <label>LaterBlue:</label>
+                <input
+                    type="number"
+                    value={state.blue}
+                    onchange={e => actions.setLaterBlue(e.target.value)}
                 />
             </li>
         </ul>
