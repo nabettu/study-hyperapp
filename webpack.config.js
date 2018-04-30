@@ -1,84 +1,84 @@
-const HTMLWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const readConfig = require('read-config')
-const glob = require('glob')
-const path = require('path')
-const portfinder = require('portfinder')
+const HTMLWebpackPlugin = require("html-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const readConfig = require("read-config");
+const glob = require("glob");
+const path = require("path");
+const portfinder = require("portfinder");
 
 // base config
-const SRC = './src'
-const DEST = './public'
-const HOST = process.env.HOST || '0.0.0.0'
-const PORT = process.env.PORT || 3000
+const SRC = "./src";
+const DEST = "./docs";
+const HOST = process.env.HOST || "0.0.0.0";
+const PORT = process.env.PORT || 3000;
 
 // 空いているポート番号のベースとなるポート番号の設定
-portfinder.basePort = PORT
+portfinder.basePort = PORT;
 
 // page/**/*.pug -> dist/**/*.html
-const htmlTemplates = (() =>{
-    const pageDir = `${SRC}/pug/page`
+const htmlTemplates = (() => {
+    const pageDir = `${SRC}/pug/page`;
 
-    const filepaths = glob.sync(`${pageDir}/**/[!_]*.pug`)
+    const filepaths = glob.sync(`${pageDir}/**/[!_]*.pug`);
 
     return filepaths.map(filepath => {
-        const template = filepath
+        const template = filepath;
         const filename = filepath
-        .replace(pageDir, '.')
-        .replace(/\.pug$/, '.html')
+            .replace(pageDir, ".")
+            .replace(/\.pug$/, ".html");
         return new HTMLWebpackPlugin({
             template,
             filename,
             title: false,
-            hash: true,
-        })
-    })
-})()
+            hash: true
+        });
+    });
+})();
 
 const webpackConfig = {
     // エントリーファイル
     entry: {
-        'js/script.js': `${SRC}/js/script.js`,
-        'css/style.css': `${SRC}/scss/style.scss`,
+        "js/script.js": `${SRC}/js/script.js`,
+        "css/style.css": `${SRC}/scss/style.scss`
     },
     // 出力するディレクトリ・ファイル名などの設定
     output: {
         path: path.resolve(__dirname, DEST),
-        filename: '[name]',
+        filename: "[name]"
     },
     module: {
         // 各ファイル形式ごとのビルド設定
         rules: [
             {
                 test: /\.js$/,
-                loader: 'babel-loader',
+                loader: "babel-loader",
                 exclude: /(node_modules)/,
                 options: {
                     compact: true,
-                    cacheDirectory: true,
+                    cacheDirectory: true
                 }
             },
             {
                 test: /\.pug$/,
                 use: [
-                    'html-loader',
+                    "html-loader",
                     {
-                        loader: 'pug-html-loader',
+                        loader: "pug-html-loader",
                         options: {
                             data: {
                                 ...readConfig(`${SRC}/constants.yml`),
                                 meta: readConfig(`${SRC}/pug/meta.yml`)
                             },
                             basedir: path.resolve(`${SRC}/pug/`),
-                            pretty: true,
+                            pretty: true
                         }
                     }
-                ],
+                ]
             },
             {
                 test: /\.(jpe?g|png|gif|svg)$/,
-                loader: 'file-loader',
+                loader: "file-loader",
                 options: {
-                    name: '[path][name].[ext]'
+                    name: "[path][name].[ext]"
                 }
             },
             {
@@ -86,19 +86,19 @@ const webpackConfig = {
                 use: ExtractTextPlugin.extract({
                     use: [
                         {
-                            loader: 'css-loader',
+                            loader: "css-loader",
                             options: {
-                                importLoaders: 2,
+                                importLoaders: 2
                             }
                         },
-                        'postcss-loader',
-                        'sass-loader'
+                        "postcss-loader",
+                        "sass-loader"
                     ]
                 })
             },
             {
                 test: /.ya?ml$/,
-                loader: 'js-yaml-loader',
+                loader: "js-yaml-loader"
             }
         ]
     },
@@ -106,27 +106,28 @@ const webpackConfig = {
     devServer: {
         host: HOST,
         port: PORT,
-        contentBase: DEST,
+        contentBase: DEST
     },
     // キャシュ有効化
     cache: true,
     // 拡張子省略時のpath解決
     resolve: {
-        extensions: ['.js', '.json', '*'],
+        extensions: [".js", ".json", "*"]
     },
 
     plugins: [
         // 複数のHTMLファイルを出力する
         ...htmlTemplates,
         // style.cssを出力
-        new ExtractTextPlugin('[name]')
-    ],
-}
+        new ExtractTextPlugin("[name]")
+    ]
+};
 
 // ポート番号を割り当ててから実行させる
-module.exports = portfinder.getPortPromise()
+module.exports = portfinder
+    .getPortPromise()
     .then(port => {
-        webpackConfig.devServer.port = port
-        return webpackConfig
+        webpackConfig.devServer.port = port;
+        return webpackConfig;
     })
-    .catch(err => err)
+    .catch(err => err);
