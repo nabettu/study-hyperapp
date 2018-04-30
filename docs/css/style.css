@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,300);/* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -76,3 +76,506 @@ body {
     margin-left: 20px; }
   .colorNumbers input {
     width: 80px; }
+
+#header {
+  height: 50px;
+  background-color: #999; }
+
+#main {
+  display: flex;
+  height: calc(100vh - 50px);
+  width: 100%; }
+  #main section {
+    width: 50%; }
+
+#editor {
+  width: 100%;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box; }
+
+#previewHtml {
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box; }
+
+#preview[data-css="original"] h1 {
+  border-bottom: solid 3px #ddd;
+  font-size: 1.7em;
+  line-height: 1.2;
+  padding-bottom: 0.3em;
+  margin: 0.5em 0; }
+
+#preview[data-css="original"] h2 {
+  border-bottom: solid 1px #ddd;
+  font-size: 1.5em;
+  line-height: 1.2;
+  margin: 0.5em 0;
+  padding-bottom: 0.3em; }
+
+#preview[data-css="original"] h3 {
+  font-size: 1.3em;
+  line-height: 1.2;
+  margin: 0.5em 0; }
+
+#preview[data-css="original"] h4 {
+  font-size: 1.2em;
+  line-height: 1.2;
+  margin: 0.5em 0; }
+
+#preview[data-css="original"] h5 {
+  font-size: 1.1em;
+  line-height: 1.2;
+  margin: 0.5em 0; }
+
+#preview[data-css="original"] h6 {
+  line-height: 1.2;
+  margin: 0.5em 0; }
+
+#preview[data-css="original"] ul {
+  list-style-type: disc;
+  line-height: 1.7;
+  margin: 0.5em 0;
+  padding-left: 1.5em; }
+
+#preview[data-css="original"] ol {
+  list-style-type: decimal;
+  line-height: 1.7;
+  margin: 0.5em 0;
+  padding-left: 1.5em; }
+
+#preview[data-css="original"] hr {
+  margin: 0.5em 0; }
+
+#preview[data-css="original"] code {
+  display: block;
+  background-color: #1d1f20;
+  color: #fff;
+  margin: 0.5em 0;
+  padding: 10px; }
+
+#preview[data-css="original"] blockquote {
+  border-left: solid 3px #ddd;
+  padding: 0.5em;
+  margin: 1em 0; }
+
+#preview[data-css="original"] table {
+  width: 100%; }
+
+#preview[data-css="original"] thead tr {
+  border-bottom: 1px solid #ddd;
+  background-color: inherit !important;
+  font-weight: bold; }
+
+#preview[data-css="original"] tr {
+  border-bottom: 1px solid #ddd; }
+  #preview[data-css="original"] tr:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.03); }
+
+#preview[data-css="original"] th {
+  padding: 0.5em;
+  border: 1px solid #ddd; }
+
+#preview[data-css="original"] td {
+  padding: 0.5em;
+  border: 1px solid #ddd; }
+
+#preview[data-css="github"] {
+  /*
+Copyright (c) 2017 Chris Patuzzo
+https://twitter.com/chrispatuzzo
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/ }
+  #preview[data-css="github"] body {
+    font-family: Helvetica, arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    padding: 30px;
+    color: #333; }
+  #preview[data-css="github"] body > *:first-child {
+    margin-top: 0 !important; }
+  #preview[data-css="github"] body > *:last-child {
+    margin-bottom: 0 !important; }
+  #preview[data-css="github"] a {
+    color: #4183C4;
+    text-decoration: none; }
+  #preview[data-css="github"] a.absent {
+    color: #cc0000; }
+  #preview[data-css="github"] a.anchor {
+    display: block;
+    padding-left: 30px;
+    margin-left: -30px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0; }
+  #preview[data-css="github"] h1, #preview[data-css="github"] h2, #preview[data-css="github"] h3, #preview[data-css="github"] h4, #preview[data-css="github"] h5, #preview[data-css="github"] h6 {
+    margin: 20px 0 10px;
+    padding: 0;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    cursor: text;
+    position: relative; }
+  #preview[data-css="github"] h2:first-child, #preview[data-css="github"] h1:first-child, #preview[data-css="github"] h1:first-child + h2, #preview[data-css="github"] h3:first-child, #preview[data-css="github"] h4:first-child, #preview[data-css="github"] h5:first-child, #preview[data-css="github"] h6:first-child {
+    margin-top: 0;
+    padding-top: 0; }
+  #preview[data-css="github"] h1:hover a.anchor, #preview[data-css="github"] h2:hover a.anchor, #preview[data-css="github"] h3:hover a.anchor, #preview[data-css="github"] h4:hover a.anchor, #preview[data-css="github"] h5:hover a.anchor, #preview[data-css="github"] h6:hover a.anchor {
+    text-decoration: none; }
+  #preview[data-css="github"] h1 tt, #preview[data-css="github"] h1 code {
+    font-size: inherit; }
+  #preview[data-css="github"] h2 tt, #preview[data-css="github"] h2 code {
+    font-size: inherit; }
+  #preview[data-css="github"] h3 tt, #preview[data-css="github"] h3 code {
+    font-size: inherit; }
+  #preview[data-css="github"] h4 tt, #preview[data-css="github"] h4 code {
+    font-size: inherit; }
+  #preview[data-css="github"] h5 tt, #preview[data-css="github"] h5 code {
+    font-size: inherit; }
+  #preview[data-css="github"] h6 tt, #preview[data-css="github"] h6 code {
+    font-size: inherit; }
+  #preview[data-css="github"] h1 {
+    font-size: 28px;
+    color: black; }
+  #preview[data-css="github"] h2 {
+    font-size: 24px;
+    border-bottom: 1px solid #cccccc;
+    color: black; }
+  #preview[data-css="github"] h3 {
+    font-size: 18px; }
+  #preview[data-css="github"] h4 {
+    font-size: 16px; }
+  #preview[data-css="github"] h5 {
+    font-size: 14px; }
+  #preview[data-css="github"] h6 {
+    color: #777777;
+    font-size: 14px; }
+  #preview[data-css="github"] p, #preview[data-css="github"] blockquote, #preview[data-css="github"] ul, #preview[data-css="github"] ol, #preview[data-css="github"] dl, #preview[data-css="github"] li, #preview[data-css="github"] table, #preview[data-css="github"] pre {
+    margin: 15px 0; }
+  #preview[data-css="github"] hr {
+    border: 0 none;
+    color: #cccccc;
+    height: 4px;
+    padding: 0; }
+  #preview[data-css="github"] body > h2:first-child {
+    margin-top: 0;
+    padding-top: 0; }
+  #preview[data-css="github"] body > h1:first-child {
+    margin-top: 0;
+    padding-top: 0; }
+  #preview[data-css="github"] body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+  #preview[data-css="github"] body > h3:first-child, #preview[data-css="github"] body > h4:first-child, #preview[data-css="github"] body > h5:first-child, #preview[data-css="github"] body > h6:first-child {
+    margin-top: 0;
+    padding-top: 0; }
+  #preview[data-css="github"] a:first-child h1, #preview[data-css="github"] a:first-child h2, #preview[data-css="github"] a:first-child h3, #preview[data-css="github"] a:first-child h4, #preview[data-css="github"] a:first-child h5, #preview[data-css="github"] a:first-child h6 {
+    margin-top: 0;
+    padding-top: 0; }
+  #preview[data-css="github"] h1 p, #preview[data-css="github"] h2 p, #preview[data-css="github"] h3 p, #preview[data-css="github"] h4 p, #preview[data-css="github"] h5 p, #preview[data-css="github"] h6 p {
+    margin-top: 0; }
+  #preview[data-css="github"] li p.first {
+    display: inline-block; }
+  #preview[data-css="github"] ul, #preview[data-css="github"] ol {
+    padding-left: 30px; }
+  #preview[data-css="github"] ul :first-child, #preview[data-css="github"] ol :first-child {
+    margin-top: 0; }
+  #preview[data-css="github"] ul :last-child, #preview[data-css="github"] ol :last-child {
+    margin-bottom: 0; }
+  #preview[data-css="github"] dl {
+    padding: 0; }
+  #preview[data-css="github"] dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+  #preview[data-css="github"] dl dt:first-child {
+    padding: 0; }
+  #preview[data-css="github"] dl dt > :first-child {
+    margin-top: 0; }
+  #preview[data-css="github"] dl dt > :last-child {
+    margin-bottom: 0; }
+  #preview[data-css="github"] dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+  #preview[data-css="github"] dl dd > :first-child {
+    margin-top: 0; }
+  #preview[data-css="github"] dl dd > :last-child {
+    margin-bottom: 0; }
+  #preview[data-css="github"] blockquote {
+    border-left: 4px solid #dddddd;
+    padding: 0 15px;
+    color: #777777; }
+  #preview[data-css="github"] blockquote > :first-child {
+    margin-top: 0; }
+  #preview[data-css="github"] blockquote > :last-child {
+    margin-bottom: 0; }
+  #preview[data-css="github"] table {
+    padding: 0; }
+  #preview[data-css="github"] table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+  #preview[data-css="github"] table tr:nth-child(2n) {
+    background-color: #f8f8f8; }
+  #preview[data-css="github"] table tr th {
+    font-weight: bold;
+    border: 1px solid #cccccc;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px; }
+  #preview[data-css="github"] table tr td {
+    border: 1px solid #cccccc;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px; }
+  #preview[data-css="github"] table tr th :first-child, #preview[data-css="github"] table tr td :first-child {
+    margin-top: 0; }
+  #preview[data-css="github"] table tr th :last-child, #preview[data-css="github"] table tr td :last-child {
+    margin-bottom: 0; }
+  #preview[data-css="github"] img {
+    max-width: 100%; }
+  #preview[data-css="github"] span.frame {
+    display: block;
+    overflow: hidden; }
+  #preview[data-css="github"] span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  #preview[data-css="github"] span.frame span img {
+    display: block;
+    float: left; }
+  #preview[data-css="github"] span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+  #preview[data-css="github"] span.align-center {
+    display: block;
+    overflow: hidden;
+    clear: both; }
+  #preview[data-css="github"] span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  #preview[data-css="github"] span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+  #preview[data-css="github"] span.align-right {
+    display: block;
+    overflow: hidden;
+    clear: both; }
+  #preview[data-css="github"] span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  #preview[data-css="github"] span.align-right span img {
+    margin: 0;
+    text-align: right; }
+  #preview[data-css="github"] span.float-left {
+    display: block;
+    margin-right: 13px;
+    overflow: hidden;
+    float: left; }
+  #preview[data-css="github"] span.float-left span {
+    margin: 13px 0 0; }
+  #preview[data-css="github"] span.float-right {
+    display: block;
+    margin-left: 13px;
+    overflow: hidden;
+    float: right; }
+  #preview[data-css="github"] span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+  #preview[data-css="github"] code, #preview[data-css="github"] tt {
+    margin: 0 2px;
+    padding: 0 5px;
+    white-space: nowrap;
+    border: 1px solid #eaeaea;
+    background-color: #f8f8f8;
+    border-radius: 3px; }
+  #preview[data-css="github"] pre code {
+    margin: 0;
+    padding: 0;
+    white-space: pre;
+    border: none;
+    background: transparent; }
+  #preview[data-css="github"] .highlight pre {
+    background-color: #f8f8f8;
+    border: 1px solid #cccccc;
+    font-size: 13px;
+    line-height: 19px;
+    overflow: auto;
+    padding: 6px 10px;
+    border-radius: 3px; }
+  #preview[data-css="github"] pre {
+    background-color: #f8f8f8;
+    border: 1px solid #cccccc;
+    font-size: 13px;
+    line-height: 19px;
+    overflow: auto;
+    padding: 6px 10px;
+    border-radius: 3px; }
+  #preview[data-css="github"] pre code, #preview[data-css="github"] pre tt {
+    background-color: transparent;
+    border: none; }
+
+#preview[data-css="air"] {
+  /* https://github.com/mrmrs/fluidity */ }
+  #preview[data-css="air"] html {
+    font-size: 12px; }
+  #preview[data-css="air"] body {
+    line-height: 1.85; }
+  #preview[data-css="air"] p,
+  #preview[data-css="air"] .air-p {
+    font-size: 1rem;
+    margin-bottom: 1.3rem; }
+  #preview[data-css="air"] h1,
+  #preview[data-css="air"] .air-h1,
+  #preview[data-css="air"] h2,
+  #preview[data-css="air"] .air-h2,
+  #preview[data-css="air"] h3,
+  #preview[data-css="air"] .air-h3,
+  #preview[data-css="air"] h4,
+  #preview[data-css="air"] .air-h4 {
+    margin: 1.414rem 0 .5rem;
+    font-weight: inherit;
+    line-height: 1.42; }
+  #preview[data-css="air"] h1,
+  #preview[data-css="air"] .air-h1 {
+    margin-top: 0;
+    font-size: 3.998rem; }
+  #preview[data-css="air"] h2,
+  #preview[data-css="air"] .air-h2 {
+    font-size: 2.827rem; }
+  #preview[data-css="air"] h3,
+  #preview[data-css="air"] .air-h3 {
+    font-size: 1.999rem; }
+  #preview[data-css="air"] h4,
+  #preview[data-css="air"] .air-h4 {
+    font-size: 1.414rem; }
+  #preview[data-css="air"] h5,
+  #preview[data-css="air"] .air-h5 {
+    font-size: 1.121rem; }
+  #preview[data-css="air"] h6,
+  #preview[data-css="air"] .air-h6 {
+    font-size: .88rem; }
+  #preview[data-css="air"] small,
+  #preview[data-css="air"] .air-small {
+    font-size: .707em; }
+  #preview[data-css="air"] img,
+  #preview[data-css="air"] canvas,
+  #preview[data-css="air"] iframe,
+  #preview[data-css="air"] video,
+  #preview[data-css="air"] svg,
+  #preview[data-css="air"] select,
+  #preview[data-css="air"] textarea {
+    max-width: 100%; }
+  #preview[data-css="air"] body {
+    color: #444;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-weight: 300;
+    margin: 6rem auto 1rem;
+    max-width: 48rem;
+    text-align: center; }
+  #preview[data-css="air"] img {
+    border-radius: 50%;
+    height: 200px;
+    margin: 0 auto;
+    width: 200px; }
+  #preview[data-css="air"] a,
+  #preview[data-css="air"] a:visited {
+    color: #3498db; }
+  #preview[data-css="air"] a:hover,
+  #preview[data-css="air"] a:focus,
+  #preview[data-css="air"] a:active {
+    color: #2980b9; }
+  #preview[data-css="air"] pre {
+    background-color: #fafafa;
+    padding: 1rem;
+    text-align: left; }
+  #preview[data-css="air"] blockquote {
+    margin: 0;
+    border-left: 5px solid #7a7a7a;
+    font-style: italic;
+    padding: 1.33em;
+    text-align: left; }
+  #preview[data-css="air"] ul,
+  #preview[data-css="air"] ol,
+  #preview[data-css="air"] li {
+    text-align: left; }
+  #preview[data-css="air"] p {
+    color: #777; }
+  @media print {
+    #preview[data-css="air"] *,
+    #preview[data-css="air"] *:before,
+    #preview[data-css="air"] *:after {
+      background: transparent !important;
+      color: #000 !important;
+      box-shadow: none !important;
+      text-shadow: none !important; }
+    #preview[data-css="air"] a,
+    #preview[data-css="air"] a:visited {
+      text-decoration: underline; }
+    #preview[data-css="air"] a[href]:after {
+      content: " (" attr(href) ")"; }
+    #preview[data-css="air"] abbr[title]:after {
+      content: " (" attr(title) ")"; }
+    #preview[data-css="air"] a[href^="#"]:after,
+    #preview[data-css="air"] a[href^="javascript:"]:after {
+      content: ""; }
+    #preview[data-css="air"] pre,
+    #preview[data-css="air"] blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid; }
+    #preview[data-css="air"] thead {
+      display: table-header-group; }
+    #preview[data-css="air"] tr,
+    #preview[data-css="air"] img {
+      page-break-inside: avoid; }
+    #preview[data-css="air"] img {
+      max-width: 100% !important; }
+    #preview[data-css="air"] p,
+    #preview[data-css="air"] h2,
+    #preview[data-css="air"] h3 {
+      orphans: 3;
+      widows: 3; }
+    #preview[data-css="air"] h2,
+    #preview[data-css="air"] h3 {
+      page-break-after: avoid; } }
+  @media screen and (min-width: 32rem) and (max-width: 48rem) {
+    #preview[data-css="air"] html {
+      font-size: 15px; } }
+  @media screen and (min-width: 48rem) {
+    #preview[data-css="air"] html {
+      font-size: 16px; } }

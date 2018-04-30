@@ -1,0 +1,46 @@
+#header{
+  height: $header;
+  background-color: #999;
+}
+
+#main {
+    display: flex;
+    height: calc(100vh - #{$header});
+    width: 100%;
+
+    section {
+        width: 50%;
+    }
+}
+
+#inputMarkdown {}
+
+#editor {
+    width: 100%;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#previewHtml {
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#preview {
+    &[data-css="original"] {
+        @import '../markdowns/original';
+    }
+
+    &[data-css="github"] {
+        @import '../markdowns/github';
+    }
+
+    &[data-css="air"] {
+        @import '../markdowns/air';
+    }
+}
