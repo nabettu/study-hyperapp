@@ -1,5 +1,7 @@
 import { h, app } from "hyperapp";
-import markdown from "./libs/markdown";
+import mdTrans from "./libs/mdTrans";
+
+import Header from "./components/Header";
 //@jsx h
 
 const previewStyles = ["original", "github", "air"];
@@ -32,7 +34,7 @@ const state = {
 };
 
 const actions = {
-    setInput: input => state => ({ preview: markdown(input) }),
+    setInput: input => state => ({ preview: mdTrans(input) }),
     changeCss: input => state => ({ previewStyle: input }),
     addEditorItem: itemType => (state, actions) => {
         const editor = document.querySelector("#editor");
@@ -53,19 +55,22 @@ const actions = {
             itemType.before.length +
             oldInput.substring(posStart, posEnd).length;
         actions.setInput(editor.value);
+    },
+    downloadFile: trigger => state => {
+        const inputText = document.querySelector("#editor").value;
+        const file = new Blob([inputText], { type: "text/markdown" });
+        const fileURL = URL.createObjectURL(file);
+        trigger.href = fileURL;
     }
 };
 
 const view = (state, actions) => (
     <div className="">
-        <header id="header">
-            <h1>Hyperapp Markdown Editor!!!</h1>
-            <select onchange={e => actions.changeCss(e.target.value)}>
-                {previewStyles.map(previewStyle => {
-                    return <option value={previewStyle}>{previewStyle}</option>;
-                })}
-            </select>
-        </header>
+        <Header
+            state={state}
+            changeCss={actions.changeCss}
+            previewStyles={previewStyles}
+        />
         <article id="main">
             <section id="inputMarkdown">
                 <div id="editorButtons">
@@ -82,6 +87,15 @@ const view = (state, actions) => (
                             </button>
                         );
                     })}
+                    <a
+                        className="editorButtons--download"
+                        download="inputMarkdown.md"
+                        onclick={e => {
+                            actions.downloadFile(e.target);
+                        }}
+                    >
+                        download
+                    </a>
                 </div>
                 <textarea
                     id="editor"

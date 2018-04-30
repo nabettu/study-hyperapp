@@ -95,7 +95,7 @@ body {
 
 #editorButtons {
   background-color: #ccc; }
-  #editorButtons .editorButtons, #editorButtons .editorButtons--strong, #editorButtons .editorButtons--italic, #editorButtons .editorButtons--strikethrough, #editorButtons .editorButtons--link {
+  #editorButtons .editorButtons, #editorButtons .editorButtons--strong, #editorButtons .editorButtons--italic, #editorButtons .editorButtons--strikethrough, #editorButtons .editorButtons--link, #editorButtons .editorButtons--download {
     width: 45px;
     height: 45px;
     line-height: 45px;
@@ -105,9 +105,9 @@ body {
     font-size: 0;
     position: relative;
     cursor: pointer; }
-    #editorButtons .editorButtons:hover, #editorButtons .editorButtons--strong:hover, #editorButtons .editorButtons--italic:hover, #editorButtons .editorButtons--strikethrough:hover, #editorButtons .editorButtons--link:hover {
+    #editorButtons .editorButtons:hover, #editorButtons .editorButtons--strong:hover, #editorButtons .editorButtons--italic:hover, #editorButtons .editorButtons--strikethrough:hover, #editorButtons .editorButtons--link:hover, #editorButtons .editorButtons--download:hover {
       opacity: 0.75; }
-    #editorButtons .editorButtons:before, #editorButtons .editorButtons--strong:before, #editorButtons .editorButtons--italic:before, #editorButtons .editorButtons--strikethrough:before, #editorButtons .editorButtons--link:before {
+    #editorButtons .editorButtons:before, #editorButtons .editorButtons--strong:before, #editorButtons .editorButtons--italic:before, #editorButtons .editorButtons--strikethrough:before, #editorButtons .editorButtons--link:before, #editorButtons .editorButtons--download:before {
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
       font-size: 20px;
@@ -128,10 +128,11 @@ body {
       content: "\F0CC"; }
     #editorButtons .editorButtons--link:before {
       content: "\F0C1"; }
-  #editorButtons.download {
-    margin-left: auto; }
-    #editorButtons.download:before {
-      content: "\F019"; }
+    #editorButtons .editorButtons--download {
+      display: inline-block;
+      float: right; }
+      #editorButtons .editorButtons--download:before {
+        content: "\F019"; }
 
 #editor {
   width: 100%;
